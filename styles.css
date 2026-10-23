@@ -1,0 +1,650 @@
+/* ==================================
+   CONFIGURACIÓN GENERAL
+================================== */
+
+:root {
+  --fondo: #f7f9fc;
+  --blanco: #ffffff;
+  --texto: #172b46;
+  --secundario: #56677d;
+  --azul: #235dde;
+  --azul-oscuro: #1747b3;
+  --azul-claro: #eaf1ff;
+  --borde: #dde5f0;
+  --radio: 24px;
+  --sombra: 0 20px 55px rgba(23, 43, 70, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+}
+
+p {
+  overflow-wrap: anywhere;
+}
+
+.contenedor {
+  width: min(1120px, 90%);
+  margin-inline: auto;
+}
+
+.saltar {
+  position: absolute;
+  top: -120px;
+  left: 20px;
+  z-index: 100;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background: white;
+}
+
+.saltar:focus {
+  top: 12px;
+}
+
+:focus-visible {
+  outline: 3px solid #b45309;
+  outline-offset: 5px;
+}
+
+/* ==================================
+   NAVEGACIÓN
+================================== */
+
+.encabezado {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--borde);
+  backdrop-filter: blur(12px);
+}
+
+.navegacion {
+  min-height: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.logo-icono {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  background: var(--azul);
+  color: white;
+  border-radius: 14px;
+  font-size: 1.8rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+nav a:not(.boton):hover {
+  color: var(--azul);
+}
+
+/* ==================================
+   BOTONES
+================================== */
+
+.boton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  min-height: 50px;
+  padding: 13px 24px;
+  border-radius: 12px;
+  background: var(--azul);
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.boton:hover {
+  background: var(--azul-oscuro);
+  transform: translateY(-3px);
+}
+
+.boton-pequeno {
+  min-height: 44px;
+  padding: 10px 20px;
+}
+
+.boton-ancho {
+  width: 100%;
+}
+
+.enlace {
+  color: var(--azul);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.enlace:hover {
+  text-decoration: underline;
+}
+
+/* ==================================
+   SECCIÓN DE INICIO
+================================== */
+
+.inicio {
+  padding: 90px 0;
+  background:
+    radial-gradient(
+      circle at 85% 20%,
+      #dce9ff,
+      transparent 45%
+    ),
+    linear-gradient(135deg, #f8faff, #edf3fc);
+}
+
+.inicio-contenido {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.inicio-contenido > *,
+.nosotros-contenido > *,
+.contacto > *,
+.servicios > * {
+  min-width: 0;
+}
+
+.etiqueta {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: var(--azul);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin-bottom: 25px;
+  font-size: clamp(2.5rem, 5vw, 4.3rem);
+  letter-spacing: -2px;
+  line-height: 1.08;
+}
+
+h1 span {
+  color: var(--azul);
+}
+
+.presentacion > p {
+  max-width: 540px;
+  color: var(--secundario);
+  font-size: 1.08rem;
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 32px;
+}
+
+.detalle-inicio {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+  color: var(--secundario);
+  font-size: 0.85rem;
+}
+
+.punto {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--azul);
+}
+
+/* ==================================
+   TARJETA PRINCIPAL
+================================== */
+
+.tarjeta-inicio {
+  padding: 35px;
+  border: 1px solid var(--borde);
+  border-radius: 28px;
+  background: var(--blanco);
+  box-shadow: var(--sombra);
+}
+
+.icono-grande {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 25px;
+  border-radius: 18px;
+  background: var(--azul-claro);
+  color: var(--azul);
+  font-size: 2.3rem;
+}
+
+.tarjeta-inicio .etiqueta {
+  margin-bottom: 12px;
+}
+
+.tarjeta-inicio h2 {
+  margin-bottom: 16px;
+  font-size: 1.8rem;
+}
+
+.tarjeta-inicio > p {
+  color: var(--secundario);
+  font-size: 0.95rem;
+}
+
+.datos-visita {
+  margin: 20px 0 25px;
+}
+
+.datos-visita div {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.datos-visita dt {
+  margin-bottom: 3px;
+  color: var(--secundario);
+  font-size: 0.8rem;
+}
+
+.datos-visita dd {
+  font-size: 0.93rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* ==================================
+   SECCIONES Y SERVICIOS
+================================== */
+
+.seccion {
+  padding: 80px 0;
+}
+
+.titulo-seccion {
+  max-width: 650px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.titulo-seccion h2,
+.nosotros-texto h2 {
+  margin-bottom: 20px;
+  font-size: clamp(1.9rem, 3.5vw, 2.7rem);
+  letter-spacing: -1px;
+}
+
+.titulo-seccion p {
+  color: var(--secundario);
+}
+
+.servicios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.tarjeta {
+  padding: 32px;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  background: var(--blanco);
+}
+
+.servicios .tarjeta {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.servicios .tarjeta:hover {
+  transform: translateY(-7px);
+  box-shadow: var(--sombra);
+}
+
+.numero {
+  display: inline-grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  background: var(--azul-claro);
+  color: var(--azul);
+  font-weight: 800;
+}
+
+.tarjeta h3 {
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+}
+
+.tarjeta p {
+  color: var(--secundario);
+}
+
+/* ==================================
+   NOSOTROS
+================================== */
+
+.nosotros {
+  padding: 80px 0;
+  background: #142741;
+  color: white;
+}
+
+.nosotros-contenido {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.perfil {
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 35px;
+  border: 1px solid #3e5677;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #244974, #1a3454);
+  text-align: center;
+}
+
+.avatar {
+  width: 115px;
+  height: 115px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 25px;
+  border: 1px solid #9ab6d9;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.perfil h3 {
+  margin-bottom: 10px;
+}
+
+.perfil p {
+  color: #d1deef;
+}
+
+.matricula {
+  margin-top: 16px;
+  padding: 5px 13px;
+  border-radius: 20px;
+  background: #142c49;
+  color: #d1deef;
+  font-size: 0.8rem;
+}
+
+.nosotros-texto .etiqueta {
+  color: #a6caff;
+}
+
+.nosotros-texto p {
+  margin-bottom: 20px;
+  color: #cbd8e9;
+}
+
+.nosotros-texto .boton {
+  margin-top: 10px;
+}
+
+/* ==================================
+   CONTACTO
+================================== */
+
+.contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+address {
+  font-style: normal;
+}
+
+.dato {
+  padding: 17px 0;
+  border-bottom: 1px solid var(--borde);
+}
+
+.dato:last-child {
+  border-bottom: none;
+}
+
+.dato h4 {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.dato p {
+  font-size: 0.95rem;
+}
+
+.informacion {
+  background: var(--azul-claro);
+}
+
+.lista {
+  padding-left: 20px;
+  margin: 25px 0;
+  color: var(--secundario);
+}
+
+.lista li {
+  margin-bottom: 14px;
+}
+
+.lista li::marker {
+  color: var(--azul);
+}
+
+.aviso {
+  margin-top: 22px;
+  padding-left: 14px;
+  border-left: 3px solid var(--azul);
+  font-size: 0.88rem;
+}
+
+/* ==================================
+   PIE DE PÁGINA
+================================== */
+
+.pie {
+  padding: 28px 0;
+  border-top: 1px solid var(--borde);
+  background: var(--blanco);
+}
+
+.pie-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  color: var(--secundario);
+  font-size: 0.9rem;
+}
+
+.pie a {
+  color: var(--azul);
+  text-decoration: none;
+}
+
+.pie a:hover {
+  text-decoration: underline;
+}
+
+/* ==================================
+   ADAPTACIÓN A CELULARES
+================================== */
+
+@media (max-width: 800px) {
+  html {
+    scroll-padding-top: 160px;
+  }
+
+  .navegacion {
+    flex-direction: column;
+    padding: 16px 0;
+    gap: 16px;
+  }
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px 22px;
+  }
+
+  .inicio {
+    padding: 55px 0;
+  }
+
+  .inicio-contenido,
+  .nosotros-contenido,
+  .contacto {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .servicios {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .seccion,
+  .nosotros {
+    padding: 55px 0;
+  }
+
+  h1 {
+    letter-spacing: -1px;
+  }
+
+  .tarjeta-inicio,
+  .tarjeta {
+    padding: 27px;
+  }
+
+  .perfil {
+    min-height: 300px;
+  }
+
+  .pie-contenido {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .acciones {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .acciones .enlace {
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  nav {
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+}
+
+/* ==================================
+   MOVIMIENTO REDUCIDO
+================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .boton:hover,
+  .servicios .tarjeta:hover {
+    transform: none;
+  }
+}
